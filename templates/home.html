@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CISABZ'24 Registration Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #d4edda, #b6e3b3);
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow: auto;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 700px;
+            width: 100%;
+            transform: translateY(-50px);
+            opacity: 0;
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6ab04c, #3eaf7c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        h4 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #343a40;
+            text-align: center;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #343a40;
+        }
+
+        .symposium-card {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #c3e6cb;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .symposium-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            background-color: #e8f5e9; /* Light green background */
+            padding: 15px;
+            border-radius: 5px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-group:hover {
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+
+        .form-control {
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+            border-color: #007bff;
+        }
+
+        .btn-primary {
+            background-color: #28a745; /* Green button */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold; /* Bold text */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838; /* Darker green on hover */
+            transform: translateY(-2px);
+        }
+
+        fieldset {
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        fieldset:hover {
+            background-color: #f8f9fa;
+        }
+
+        fieldset legend {
+            font-size: 18px;
+            color: #28a745; /* Green legend */
+        }
+
+        .btn-link {
+            color: #28a745; /* Green link */
+            padding-left: 0;
+            transition: color 0.3s ease;
+        }
+
+        .btn-link:hover {
+            text-decoration: underline;
+            color: #218838; /* Darker green on hover */
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin-top: 30px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>CISABZ'24</h2>
+        <h4>KINGS COLLEGE OF ENGINEERING</h4>
+        <p class="text-center">DEPARTMENT OF CSE AND AIDS</p>
+
+        <!-- Symposium Details Card -->
+        <div class="symposium-card">
+            <h3 class="text-center">Symposium Details</h3>
+            <img src="{% static 'images/poster-v2.jpg' %}" alt="Event Poster" class="img-fluid mb-3">
+            <p><strong>Registration Fee:</strong> ₹200 per person</p>
+            <p><strong>Event Date:</strong> 25th October 2024</p>
+            <p><strong>Email:</strong> <a href="mailto:cisabz2k24@gmail.com">cisabz2k24@gmail.com</a></p>
+            <p>
+                <strong>Student Coordinators Phone No:</strong> 
+                <span style="font-weight: bold;">9150510835</span>, 
+                <span style=" font-weight: bold;">9843899530</span>, 
+                <span style=" font-weight: bold;">9361049573</span>, 
+                <span style=" font-weight: bold;">6381460560</span>
+            </p>
+        </div>
+
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+
+            <!-- Participant Details -->
+            <div class="form-group">
+                <label for="id_name">Your Name</label>
+                <input type="text" class="form-control" id="id_name" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <!-- College -->
+            <div class="form-group">
+                <label for="id_college">College</label>
+                <input type="text" class="form-control" id="id_college" name="college" placeholder="Enter your college" required>
+            </div>
+
+            <!-- Department -->
+            <div class="form-group">
+                <label for="id_dept">Department</label>
+                <input type="text" class="form-control" id="id_dept" name="dept" placeholder="Enter your department" required>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+                <label for="id_phone">Phone</label>
+                <input type="tel" class="form-control" id="id_phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="id_email">Email</label>
+                <input type="email" class="form-control" id="id_email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Food Preference -->
+            <div class="form-group">
+                <label>Food Preference</label>
+                <div>
+                    <input type="radio" id="veg" name="food_preference" value="Vegetarian" required>
+                    <label for="veg">Vegetarian</label>
+                </div>
+                <div>
+                    <input type="radio" id="non_veg" name="food_preference" value="Non-Vegetarian" required>
+                    <label for="non_veg">Non-Vegetarian</label>
+                </div>
+            </div>
+             <!-- Technical Events -->
+             <fieldset class="form-group">
+                <legend>Technical Events (Select 2)</legend>
+                <div>
+                    <input type="checkbox" id="paper_presentation" name="technical_events" value="paper_presentation">
+                    <label for="paper_presentation">Paper Presentation</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="technical_quiz" name="technical_events" value="technical_quiz">
+                    <label for="technical_quiz">Technical Quiz</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="debugging" name="technical_events" value="debugging">
+                    <label for="debugging">Debugging</label>
+                </div>
+            </fieldset>
+
+            <!-- Non-Technical Events -->
+            <fieldset class="form-group">
+                <legend>Non-Technical Events (Select 1)</legend>
+                <div>
+                    <input type="checkbox" id="figma_ui_ux" name="non_technical_event" value="figma_ui_ux">
+                    <label for="figma_ui_ux">Figma (UI/UX)</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="current_affairs" name="non_technical_event" value="current_affairs">
+                    <label for="current_affairs">Current Affairs</label>
+                </div>
+            </fieldset>
+
+            <!-- Paper Title -->
+            <div class="form-group">
+                <label for="id_paper_title">Paper Title</label>
+                <input type="text" class="form-control" id="id_paper_title" name="paper_title" placeholder="Enter paper title">
+            </div>
+
+            <!-- Paper Abstract Submission Link -->
+            <div class="form-group">
+                <label>Paper Abstract Submission Link (Dropbox)</label>
+                <div>
+                    <a href="https://www.dropbox.com/request/vZY97bWvntr5WIg8UX7N" target="_blank" class="btn btn-link">Click here to upload</a>
+                </div>
+                <p class="text-muted">Once uploaded, type "submitted".</p>
+                <input type="text" class="form-control" id="id_abstract_link" name="abstract_link">
+            </div>
+
+            <!-- Payment Mode -->
+            <div class="form-group">
+                <label>Payment Mode</label>
+                <div>
+                    <input type="radio" id="payment_online" name="payment_mode" value="Online" required checked>
+                    <label for="payment_online">Online</label>
+                </div>
+                <div>
+                    <input type="radio" id="payment_offline" name="payment_mode" value="Offline">
+                    <label for="payment_offline">Offline</label>
+                </div>
+            </div>
+
+            <div id="payment-details">
+                <!-- Payment QR Code Image -->
+                <div class="form-group">
+                    <label>Payment QR Code</label>
+                    <div class="payment-qr">
+                        <img src="{% static 'images/gpay-image-v2.jpg' %}" alt="Payment QR Code" style="max-width: 200px;">
+                    </div>
+                </div>
+
+                <!-- Payment Submission Link -->
+                <div class="form-group">
+                    <label>Payment Submission Link (Dropbox)</label>
+                    <div>
+                        <a href="https://www.dropbox.com/request/9QPlRcdlHNfHapijxXP1" target="_blank" class="btn btn-link">Click here to upload</a>
+                    </div>
+                    <p class="text-muted">Once uploaded, type "submitted".</p>
+                    <input type="text" class="form-control" id="id_payment_link" name="payment_link">
+                </div>
+
+                <!-- Transaction Number -->
+                <div class="form-group">
+                    <label for="id_transaction_number">Transaction Number</label>
+                    <input type="text" class="form-control" id="id_transaction_number" name="transaction_number" placeholder="Enter transaction number">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>WhatsApp Group Link</label>
+                <div>
+                    <a href="https://chat.whatsapp.com/CayHMNuvplR5e3EgTVWdmh" target="_blank" class="btn btn-link">Join WhatsApp Group</a>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </form>
+
+        <footer class="text-center mt-4">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/intern_iq_" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.interniq.live" target="_blank"><i class="fas fa-globe"></i></a>
+                <a href="https://www.linkedin.com/company/interniq" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>Design by internIQ Team.</p>
+            <p>CISABZ-2024 | All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const technicalCheckboxes = document.querySelectorAll('input[name="technical_events"]');
+            const nonTechnicalCheckboxes = document.querySelectorAll('input[name="non_technical_event"]');
+            const paymentModeRadios = document.querySelectorAll('input[name="payment_mode"]');
+            const paymentDetailsDiv = document.getElementById('payment-details');
+
+            // Limit selection of technical events to 2
+            technicalCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    const checkedCount = Array.from(technicalCheckboxes).filter(cb => cb.checked).length;
+
+                    if (checkedCount > 2) {
+                        alert("You can only select up to 2 technical events.");
+                        checkbox.checked = false; // Uncheck the current checkbox
+                    }
+                });
+            });
+
+            // Limit selection of non-technical events to 1
+            nonTechnicalCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    if (checkbox.checked) {
+                        nonTechnicalCheckboxes.forEach(cb => {
+                            if (cb !== checkbox) {
+                                cb.checked = false; // Uncheck other checkboxes
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Handle payment mode toggle
+            paymentModeRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    if (document.getElementById('payment_online').checked) {
+                        paymentDetailsDiv.style.display = 'block';
+                    } else {
+                        paymentDetailsDiv.style.display = 'none';
+                    }
+                });
+            });
+
+            // Initialize visibility based on default selection
+            if (document.getElementById('payment_online').checked) {
+                paymentDetailsDiv.style.display = 'block';
+            } else {
+                paymentDetailsDiv.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

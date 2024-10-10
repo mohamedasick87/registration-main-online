@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+        .success-message {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+        .success-message h2 {
+            margin: 0;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="success-message">
+        <h2>Registration Successful!</h2>
+        <p>Your registration has been completed successfully.</p>
+        <p><strong>Your Member ID:</strong> {{ member_id }}</p>
+        <p>The member id is mandatory keep note of it.</p>
+        <p>Check your mail for the registration details(if not found check spam folder)</p>
+        <a href="/" class="button">Back to Home</a>
+    </div>
+
+</body>
+</html>

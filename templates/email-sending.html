@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CISABZ'24 Registration Confirmation</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        h2 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h2>CISABZ'24 Symposium Registration Successful!</h2>
+    <p>Dear {{ name }},</p>
+    <p>Thank you for registering for the CISABZ'24 symposium! We are excited to have you join us. Here are your registration details:</p>
+    
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>Member ID</td>
+            <td>{{ member_id }}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{ name }}</td>
+        </tr>
+        <tr>
+            <td>College</td>
+            <td>{{ college }}</td>
+        </tr>
+        <tr>
+            <td>Department</td>
+            <td>{{ department }}</td>
+        </tr>
+
+        {% if paper_title %}
+        <tr>
+            <td>Paper Title</td>
+            <td>{{ paper_title }}</td>
+        </tr>
+        {% endif %}
+
+        <tr>
+            <td>Technical Events</td>
+            <td>{{ technical_events|join:", " }}</td>
+        </tr>
+        <tr>
+            <td>Non-Technical Events</td>
+            <td>{{ non_technical_events|join:", " }}</td>
+        </tr>
+        <tr>
+            <td>Payment Mode</td>
+            <td>{{ payment_mode }}</td>
+        </tr>
+    </table>
+
+    <p>We are looking forward to your participation in CISABZ'24! Here are some important details:</p>
+    <ul>
+        <li><strong>Date:</strong> 25th October</li>
+        <li><strong>Venue:</strong> Chola Hall</li>
+        <li><strong>Time:</strong> 9.00 AM to 4.30 PM</li>
+    </ul>
+
+    <p>If you have any questions or need further assistance, please feel free to contact us.</p>
+    <p>Best Regards,<br>Your CISABZ'24 Team</p>
+</body>
+</html>
